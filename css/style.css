@@ -1,0 +1,83 @@
+:root {
+    --white: #fff;
+    --primario: #12a6ba;
+    --grey: #757575;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    font-size: 16px;
+   
+}
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.title {
+    font-size: 3.8rem;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--primario);
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bold;
+}
+.form-title {
+    height: 10rem;
+    color:var(--primario);
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: 4px 4px 7px rgba(0,0,0,0.6);
+}
+
+.bg-img {
+    background-image: url(../img/alimentos.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.text-img {
+    color: var(--white);
+    text-align: center;
+    font-size: 5rem;
+    height: 15rem;
+    text-shadow: 2px -4px 5px rgba(0,0,0,1);
+    padding: 2rem;
+    margin: 5rem auto;
+}
+@media (min-width: 768px) {
+    .text-img{
+        font-size: 10rem;
+    }
+}
+table {
+    margin: 5rem auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+th, td {
+    border: 1px solid #000;
+    text-align: center;
+    padding: .7rem;
+}
+th {
+    background-color: var(--grey);
+    color: var(--white);
+    font-size: 1.5rem;
+    width: 20rem;
+    padding: .4rem;  
+}
+.numero-td {
+    width: 5%;
+}

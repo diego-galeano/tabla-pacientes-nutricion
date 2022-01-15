@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLife</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="">
+        <h1 class="title">Tabla Clientes NutriLife</h1>
+        <div class="bg-img">
+            <p class="text-img">Vivir Mejor</p>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <table class="table-patients">
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>NOMBRE</th>
+                        <th>PESO Kg</th>
+                        <th>ALTURA</th>
+                        <th>GRASA CORPORAL</th>
+                        <th>IMC</th>
+                    </tr>
+                </thead>
+                <tbody class="pacienteTr">
+                    <tr>
+                        <td id="numero" class="numero-td">1</td>
+                        <td id="nombre">Diego</td>
+                        <td id="peso">110</td>
+                        <td id="altura">1.75</td>
+                        <td id="grasa">50</td>
+                        <td id="imc"></td>
+                    </tr>    
+                </tbody>
+            </table>
+        </section>
+        <br>
+        <section>
+            <h2 class="form-title">Carga De Pacientes</h2>
+            <form id="add-form">
+              <div class="container">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Ingrese nombre">
+                    </div>
+                    <div>
+                        <label for="peso">Peso:</label>
+                        <input id="peso" name="peso" type="text" placeholder="Ingrese peso">
+                    </div>
+                    <div>
+                        <label for="altura">Altura:</label>
+                        <input id="altura" name="altura" type="text" placeholder="Ingrese altura">
+                    </div>
+                    <div>
+                        <label for="grasa">% de Grasa:</label>
+                        <input type="text" name="grasa" id="grasa" placeholder="Ingrese grasa en %">
+                    </div>
+                </form>             
+                <button id="add-button" class="add-button">Agregar</button>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </main>
+<script src="main.js"></script>
+<script src="js/form.js"></script>
+<script src="js/calculoImc.js"></script>
+</body>
+</html>
