@@ -1,5 +1,6 @@
 var AddButton = document.querySelector("#add-button");
-AddButton.addEventListener('click', ()=> {
+AddButton.addEventListener('click', (event)=> {
+    event.preventDefault();
     var form = document.querySelector("#add-form");
     var numero = 1;
     var nombre = form.nombre.value;
