@@ -1,46 +1,68 @@
 var AddButton = document.querySelector("#add-button");
+var tabla = document.querySelector("tbody");
+
+
 AddButton.addEventListener('click', (event)=> {
     event.preventDefault();
-    var form = document.querySelector("#add-form");
-    var numero = 1;
-    var nombre = form.nombre.value;
-    var peso = form.peso.value;
-    var altura= form.altura.value;
-    var grasa = form.grasa.value;
-    var imc = "";
-    
-
-    var pacienteTr = document.createElement("tr");
-    var numeroTd = document.createElement("td")
-    var nombreTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var grasaTd = document.createElement("td");
-    var imcTd = document.createElement("td");
-
-    numeroTd.textContent = numero;
-    nombreTd.textContent = nombre;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    grasaTd.textContent = grasa;
-    imcTd.textContent = imc;
-
-    pacienteTr.appendChild(numeroTd);
-    pacienteTr.appendChild(nombreTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(grasaTd);
-    pacienteTr.appendChild(imcTd);
-
-    var tabla = document.querySelector("tbody");
+    let form = document.querySelector("#add-form");
+    let paciente = capturarDatosPaciente(form);
+    let pacienteTr = constructorTr(paciente);
     tabla.appendChild(pacienteTr);
-
-    console.log(form.nombre.value);
-    console.log(form.peso.value);
-    console.log(form.altura.value);
-
-    console.log(pacienteTr);
 });
+
+let capturarDatosPaciente = (form) => {
+    let paciente = {
+        numero: 1,
+        nombre: form.nombre.value,
+        peso: form.peso.value,
+        altura: form.altura.value,
+        grasa: form.grasa.value
+    }
+    return paciente;
+}
+
+let constructorTr = (paciente) => {
+     //Creando Tr y Tds
+     var pacienteTr = document.createElement("tr");
+     pacienteTr.classList.add("paciente");
+
+     var numeroTd = document.createElement("td");
+     numeroTd.classList.add("info-numero");
+
+     var nombreTd = document.createElement("td");
+     nombreTd.classList.add("info-nombre");
+
+     var pesoTd = document.createElement("td");
+     pesoTd.classList.add("info-peso");
+     
+     var alturaTd = document.createElement("td");
+     alturaTd.classList.add("info-altura");
+
+     var grasaTd = document.createElement("td");
+     grasaTd.classList.add("info-grasa");
+
+     var imcTd = document.createElement("td");
+     imcTd.classList.add("info-imc");
+     
+     // Asignando valorees a la propiedad textContent
+     
+     numeroTd.textContent = paciente.numero;
+     nombreTd.textContent = paciente.nombre;
+     pesoTd.textContent = paciente.peso;
+     alturaTd.textContent = paciente.altura;
+     grasaTd.textContent = paciente.grasa;
+     imcTd.textContent = imc;
+     
+     //Creando elementos html
+     pacienteTr.appendChild(numeroTd);
+     pacienteTr.appendChild(nombreTd);
+     pacienteTr.appendChild(pesoTd);
+     pacienteTr.appendChild(alturaTd);
+     pacienteTr.appendChild(grasaTd);
+     pacienteTr.appendChild(imcTd);
+     
+     return pacienteTr;
+}
 
 // var header = document.querySelector("header");
 // var h2 = document.createElement('h2');
