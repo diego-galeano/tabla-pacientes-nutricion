@@ -1,13 +1,17 @@
 var AddButton = document.querySelector("#add-button");
 var tabla = document.querySelector("tbody");
 let numeroPaciente = 1;
-let imc = 0;
+
 
 AddButton.addEventListener('click', (event)=> {
     event.preventDefault();
     let form = document.querySelector("#add-form");
     let paciente = capturarDatosPaciente(form);
     let pacienteTr = constructorTr(paciente);
+    if(!validarInput(paciente)){
+        console.log("paciente incorrecto");
+        return;
+    }
     tabla.appendChild(pacienteTr);
     count();
     form.reset();
@@ -16,7 +20,7 @@ AddButton.addEventListener('click', (event)=> {
 
 let constructorTr = (paciente) => {
     //Creando Tr y Tds
-    var pacienteTr = document.createElement("tr");
+    let pacienteTr = document.createElement("tr");
     pacienteTr.classList.add("paciente");
     
     //Creando elementos html
@@ -25,7 +29,7 @@ let constructorTr = (paciente) => {
     pacienteTr.appendChild(constructorTd(paciente.peso, "info-peso"));
     pacienteTr.appendChild(constructorTd(paciente.altura, "info-altura"));
     pacienteTr.appendChild(constructorTd(paciente.grasa,"info-grasa"));
-    pacienteTr.appendChild(constructorTd(imc, "info-imc"));
+    pacienteTr.appendChild(constructorTd(calcularImc(paciente.peso, paciente.altura), "info-imc"));
     
     return pacienteTr;
 }
@@ -46,4 +50,10 @@ let constructorTd = (date, styleClass) => {
 }
 
 let count = () => numeroPaciente++;
+
+let validarInput = (paciente) => {
+    if (validarPeso(paciente.peso))
+      return true;
+    else return false;
+}
 
